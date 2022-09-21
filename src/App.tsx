@@ -1,6 +1,6 @@
-import React from 'react';
-import './App.css';
-import { Formik, Field, Form, FormikHelpers } from 'formik';
+import React from "react";
+import { Formik, Field, Form, FormikHelpers } from "formik";
+import { css } from "@emotion/react";
 
 interface Values {
   firstName: string;
@@ -8,15 +8,21 @@ interface Values {
   email: string;
 }
 
+const titleStyle = css({
+  boxSizing: "border-box",
+  width: 300,
+  height: 200,
+});
+
 function App() {
   return (
     <div>
       <h1>Signup</h1>
       <Formik
         initialValues={{
-          firstName: '',
-          lastName: '',
-          email: '',
+          firstName: "",
+          lastName: "",
+          email: "",
         }}
         onSubmit={(
           values: Values,
@@ -29,21 +35,21 @@ function App() {
         }}
       >
         <Form>
-          <label htmlFor='firstName'>First Name</label>
-          <Field id='firstName' name='firstName' placeholder='John' />
+          <label htmlFor="firstName">First Name</label>
+          <Field id="firstName" name="firstName" placeholder="John" />
 
-          <label htmlFor='lastName'>Last Name</label>
-          <Field id='lastName' name='lastName' placeholder='Doe' />
+          <label htmlFor="lastName">Last Name</label>
+          <Field id="lastName" name="lastName" placeholder="Doe" />
 
-          <label htmlFor='email'>Email</label>
+          <label htmlFor="email">Email</label>
           <Field
-            id='email'
-            name='email'
-            placeholder='john@acme.com'
-            type='email'
+            id="email"
+            name="email"
+            placeholder="john@acme.com"
+            type="email"
           />
 
-          <button type='submit'>Submit</button>
+          <button type="submit">Submit</button>
         </Form>
       </Formik>
     </div>
