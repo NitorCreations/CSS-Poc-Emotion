@@ -11,14 +11,13 @@ interface Values {
 
 const titleStyle = css({
   boxSizing: 'border-box',
-  width: 300,
-  height: 200,
+  color: 'red',
 });
 
 function App() {
   return (
     <div>
-      <h1>Signup</h1>
+      <h1 css={titleStyle}>Signup</h1>
       <Formik
         initialValues={{
           firstName: '',
